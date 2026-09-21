@@ -24,6 +24,8 @@ function App() {
     });
   }
 
+  const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
+
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(success);
   }, []);
@@ -35,7 +37,7 @@ function App() {
     }
     axios
       .get(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lon}&units=metric&appid=aab64aa1d7106654a2f85d74605d0bcb`,
+        `https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lon}&units=metric&appid=${API_KEY}`,
       )
       .then((response) => {
         setStatus(response.data);

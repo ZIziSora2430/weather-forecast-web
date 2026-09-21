@@ -105,13 +105,14 @@ const ForecastChart = ({ forecast }) => {
 export const ForecastWeather = ({ location }) => {
   const [status, setStatus] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
 
   useEffect(() => {
     if (location.lat === null || location.lon === null) return;
 
     axios
       .get(
-        `https://api.openweathermap.org/data/2.5/forecast?lat=${location.lat}&lon=${location.lon}&units=metric&appid=aab64aa1d7106654a2f85d74605d0bcb`,
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${location.lat}&lon=${location.lon}&units=metric&appid=${API_KEY}`,
       )
       .then((response) => {
         setStatus(response.data);
