@@ -13,9 +13,42 @@ Built with React and OpenWeather api
 
 ## Installation
 
-Instructions for other developers on how to install and run your code on their local environment.
+This project is a weather web application that provides current weather information and weather forecasts based on the user's device location. It uses the OpenWeather API to retrieve weather data.
 
+### Prerequisites
+
+Make sure you have the following installed:
+
+- Node.js
+- npm
+- Git
+
+### Installation
+
+1. Clone the repository:
+
+````bash
+git clone <repository-url>
+
+cd <project-folder>
+
+npm install
+
+### API Configuration
+
+Create a `.env` file in the root directory and add your OpenWeather API key:
+
+```env
+VITE_OPENWEATHER_API_KEY=your_api_key
+
+Make sure `.env` is included in `.gitignore`.
+
+### Run the Application
+
+Start the development server:
+
+```bash
+npm run dev
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
-Most open source projects use the MIT license. Feel free to choose whichever license you prefer.
+````
